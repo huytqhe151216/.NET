@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\bin\Debug\net5.0\DemoBinaryReader.exe
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\bin\Debug\net5.0\DemoBinaryReader.deps.json
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\bin\Debug\net5.0\DemoBinaryReader.runtimeconfig.json
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\bin\Debug\net5.0\DemoBinaryReader.runtimeconfig.dev.json
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\bin\Debug\net5.0\DemoBinaryReader.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\bin\Debug\net5.0\DemoBinaryReader.pdb
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\refint\DemoBinaryReader.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.pdb
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\DemoBinaryReader.genruntimeconfig.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoBinaryReader\obj\Debug\net5.0\ref\DemoBinaryReader.dll

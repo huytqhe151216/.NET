@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\bin\Debug\net5.0\DemoExtendsionMethod_linQ.exe
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\bin\Debug\net5.0\DemoExtendsionMethod_linQ.deps.json
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\bin\Debug\net5.0\DemoExtendsionMethod_linQ.runtimeconfig.json
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\bin\Debug\net5.0\DemoExtendsionMethod_linQ.runtimeconfig.dev.json
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\bin\Debug\net5.0\DemoExtendsionMethod_linQ.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\bin\Debug\net5.0\DemoExtendsionMethod_linQ.pdb
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\refint\DemoExtendsionMethod_linQ.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.pdb
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\DemoExtendsionMethod_linQ.genruntimeconfig.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\DemoExtendsionMethod_linQ\obj\Debug\net5.0\ref\DemoExtendsionMethod_linQ.dll

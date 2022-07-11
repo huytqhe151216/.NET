@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "u34gB/PiiKSfZNTHXY6YQpMZUEt7Il1pn97AEHsBMhbt3/Aeczk7Aa8EQ31MeMfA3U6iuS2FNcHVGpDTNIrXzw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\source\\repos\\SE1422_solution\\DemoEvent\\DemoEvent.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

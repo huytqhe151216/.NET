@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+@using BtNorthwind.Models
+@model List<Employee>
+<h1>List of employees</h1>
+@foreach (Employee e in Model)
+{
+    <li><a href="Detail/@e.EmployeeId">@($"{e.FirstName} {e.LastName}")</a></li>
+}

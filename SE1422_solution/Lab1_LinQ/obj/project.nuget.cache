@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "eFE1tSQPbu2xlieh0Aml4ld+B58If5gu46qIdErpJ3r8H/dsOZQjcqEd5yS2eYJWy6EgXFpreyFZHGFC53bb6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\source\\repos\\SE1422_solution\\Lab1_LinQ\\Lab1_LinQ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

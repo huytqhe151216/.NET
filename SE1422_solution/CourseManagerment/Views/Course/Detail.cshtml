@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using CourseManagerment.Models
+@model CourseManagerment.Models.Course
+<form class="row">
+                            <div class="form-group col-md-2">
+                                <label class="control-label">CourseCode</label>
+                                <input class="form-control" type="text" value="@Model.CourseCode">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Subject</label>
+                                <input class="form-control" type="text" value="@Model.Subject.SubjectName" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Instructor</label>
+                                <input class="form-control" type="text" required value="@Model.Instructor.InstructorFirstName @Model.Instructor.InstructorMidName @Model.Instructor.InstructorLastName">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label class="control-label">Term</label>
+                                <input class="form-control" type="text" value="@Model.Term.TermName" required>
+                            </div>
+                            <div class="form-group  col-md-2">
+                                <label class="control-label">Campus</label>
+                                <input class="form-control" type="text" value="@Model.Campus.CampusName" required>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="control-label">Description</label>
+                                <textarea class="form-control" rows="3" required>@Model.CourseDescription</textarea>
+                            </div>
+                        </form>
+                        <h4>List of Student in Course</h4>
+                        <table class="table table-hover table-bordered" id="sampleTable">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>StudentId</th>
+                                    <th>RollNumber</th>
+                                    <th>First Name</th>
+                                    <th>Mid Name</th>
+                                    <th>Last Name</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (StudentCourse s in Model.StudentCourses)
+                                {
+                                    <tr>
+                                       
+                                        <td>@s.StudentId</td>
+                                        <td>@s.Student.Roll</td>
+                                        <td>@s.Student.FirstName</td>
+                                        <td>@s.Student.MidName</td>
+                                        <td>@s.Student.LastName</td>
+                                        
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>

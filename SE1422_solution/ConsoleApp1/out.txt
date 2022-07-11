@@ -1,0 +1,7 @@
+Department : dev
+Account: trungnb - 123456
+Employee: Account: hangnt - 123456 - 1200 - admin
+Account: annb - 123456
+Account: vuongvt - 123456
+Customer: Account: thaonh - 1234 - Nguyen Huong Thao - 8/12/2000 12:00:00 AM
+Employee: Account: thangtt - 123456 - 1400 - mod

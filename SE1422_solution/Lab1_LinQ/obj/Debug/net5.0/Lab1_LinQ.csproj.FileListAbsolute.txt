@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\bin\Debug\net5.0\Lab1_LinQ.exe
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\bin\Debug\net5.0\Lab1_LinQ.deps.json
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\bin\Debug\net5.0\Lab1_LinQ.runtimeconfig.json
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\bin\Debug\net5.0\Lab1_LinQ.runtimeconfig.dev.json
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\bin\Debug\net5.0\Lab1_LinQ.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\bin\Debug\net5.0\Lab1_LinQ.pdb
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\refint\Lab1_LinQ.dll
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.pdb
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\Lab1_LinQ.genruntimeconfig.cache
+C:\Users\ADMIN\source\repos\SE1422_solution\Lab1_LinQ\obj\Debug\net5.0\ref\Lab1_LinQ.dll

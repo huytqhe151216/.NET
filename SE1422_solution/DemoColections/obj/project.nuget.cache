@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "L4pYd+TdmAHsrGv2Uc8FNe8qyJMU079BjMogCfIBQOkktWkt5ZM5nVolChx3U1fXx5S28WswYaQ3mBLhw9MxsA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\source\\repos\\SE1422_solution\\DemoColections\\DemoColections.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

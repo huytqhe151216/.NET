@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using CourseManagerment.Models
+<a href="#">
+    <b>
+        List of course in subject <span>@ViewData["subjectName"]</span>
+    </b>
+</a>
+<>
+
+<select id="subject"
+        name="Id" onchange="location = this.value;">
+    <option value="" selected disabled hidden>Select a Subject</option>
+        @foreach (Subject s in ViewBag.subjects)
+        {
+        <option value="/Course/List/@s.SubjectId" @(s.SubjectId == ViewBag.subjectId ?
+            "selected":"")>@s.SubjectName</option>
+        }
+</select>
+</>
+@if (ViewBag.id == 0)
+{
+    <div class="alert alert-danger" role="alert">
+        <strong>
+            Please choose a subject.
+        </strong>
+    </div>
+}
+else
+{
+    @if (ViewBag.Courses.Count <= 0)
+    {
+        <div>
+            <strong>
+                There are no course in @ViewData["subjectName"].
+            </strong>
+        </div>
+    }
+    else
+    {
+        <table id="sampleTable">
+            <thead>
+                <tr>
+                    
+                    <th>CourseId</th>
+                    <th>CourseCode</th>
+                    <th>CourseDescription</th>
+                    <th width="200">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Course c in ViewBag.courses)
+                {
+                    <tr>
+                       
+                        <td>@c.CourseId</td>
+                        <td>@c.CourseCode</td>
+                        <td>@c.CourseDescription</td>
+                        <td>
+                            <a href="/Course/Detail/@c.CourseId">
+                                view detail
+                            </a>
+                            <a href=#>edit</a>
+                            <a href=#>delelte</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

@@ -1,0 +1,8 @@
+1|Nguyen Van A|SE| 12 Sep 1999|2018 |50
+2|Nguyen Binh Duong|IA|14 Sep 2000|2019|45.5
+3|Bui Trung Thanh|GD|09 Oct 2000|2018|0
+4|Bui Trung Huy|AI|09 Oct 2000|2018|0
+5|To Quang Huy|SE|13 Jun 2001|2019|0
+6|Vuong Thien Nhat|CH|13 Jun 1989|2016|15
+7|Vuong Gia Luong|CH|13 Jun 1937|2011|20
+8|Hua Ngan Xuyen|CH|13 Jun 1974|2015|1
