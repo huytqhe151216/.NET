@@ -1,0 +1,88 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using BtNorthwind.Models;
+@model List<Product>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div style="display:flex; justify-content:space-around">
+        <div>
+            <h1>List Categories</h1>
+            <table border=1>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Show products</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>@Html.ActionLink("Show all","List","Product",new{categoryId=0})</td>
+                    </tr>
+                    @foreach (Category item in ViewBag.categories)
+                    {
+                        <tr>
+                            <td>@item.CategoryId</td>
+                            <td>@item.CategoryName</td>
+                            <td>@Html.ActionLink("Show","List","Product",new{categoryId=item.CategoryId})</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h1>
+                List product
+            </h1>
+            <table border=1>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Unit in stock</th>
+                        <th>Quantity per unit</th>
+                        <th>Price per unit</th>
+                        <></>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Product product in Model)
+                    {
+                        <tr>
+                            <td>@product.ProductId</td>
+                            <td>@product.ProductName</td>
+                            <td>@product.UnitsInStock</td>
+                            <td>@product.QuantityPerUnit</td>
+                            <td>@product.UnitPrice</td>
+                            <td>@Html.ActionLink("Add to cart","List","Product", new{productId=@product.ProductId})</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="/Product/List?categoryId=@ViewBag.categoryId&page=@(ViewBag.currentPage-1)">Previous</a></li>
+                    @for (var i = 1; i <= ViewBag.numberOfPage; i++)
+                   {
+                       <li class="page-item"><a class="page-link" href="/Product/List?categoryId=@ViewBag.categoryId&page=@i">@i</a></li>
+                   }
+                   
+                    <li class="page-item"><a class="page-link" href="/Product/List?categoryId=@ViewBag.categoryId&page=@(ViewBag.currentPage+1)">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div style="margin:0 auto" >
+        <div>Have @ViewBag.countCart products in cart</div>
+        <a href="Cart/ViewCart">View cart</a>
+    </div>
+</body>
+</html>
