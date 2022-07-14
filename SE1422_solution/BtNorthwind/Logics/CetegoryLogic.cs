@@ -13,5 +13,12 @@ namespace BtNorthwind.Logics
                 return context.Categories.ToList();
             }
         }
+        public static Category GetCategoryName(int categoryId)
+        {
+            using (var context = new NorthwindContext())
+            {
+                return context.Categories.Where(c => c.CategoryId == categoryId).FirstOrDefault();
+            }
+        }
     }
 }

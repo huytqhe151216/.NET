@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using BtNorthwind.Models
+@model List<Cart>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    @if (Model.Count > 0)
+    {
+        <h2>List product in your cart</h2>
+        <table border=1>
+            <thead>
+                <tr>
+                    <th>ProductName</th>
+                    <th>UnitPrice</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Cart cart in Model)
+               {
+                   <tr>
+                       <td>@cart.Product.ProductName</td>
+                       <td>@cart.Product.UnitPrice</td>
+                       <td>@Html.ActionLink("- " , "Add", "Product", new{productId=@cart.Product.ProductId,quantity= -1}) @cart.quantity @Html.ActionLink(" +" , "Add", "Product", new{productId=@cart.Product.ProductId,quantity= 1})</td>
+                       <td>@cart.ToPrice()</td>
+                   </tr>
+               }
+            </tbody>
+        </table>
+        <h1>Total: @ViewBag.total $</h1>
+        @Html.ActionLink("Back", "List","Product")<br>
+        @Html.ActionLink("Order","Order","Product")
+    }
+    else
+    {
+        <h2>Cart is empty.</h2>
+    }
+</body>
+</html>

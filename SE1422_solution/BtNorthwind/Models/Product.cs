@@ -26,5 +26,17 @@ namespace BtNorthwind.Models
         public virtual Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Product product &&
+                   ProductId == product.ProductId;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ProductId);
+        }
+        
     }
 }

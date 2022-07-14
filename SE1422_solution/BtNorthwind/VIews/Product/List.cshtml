@@ -40,7 +40,7 @@
         </div>
         <div>
             <h1>
-                List product
+                List product of @ViewBag.categoryName
             </h1>
             <table border=1>
                 <thead>
@@ -50,7 +50,7 @@
                         <th>Unit in stock</th>
                         <th>Quantity per unit</th>
                         <th>Price per unit</th>
-                        <></>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@
                             <td>@product.UnitsInStock</td>
                             <td>@product.QuantityPerUnit</td>
                             <td>@product.UnitPrice</td>
-                            <td>@Html.ActionLink("Add to cart","List","Product", new{productId=@product.ProductId})</td>
+                            <td>@Html.ActionLink("Add to cart","AddtoCart","Product", new{productId=@product.ProductId, categoryId= @ViewBag.categoryId, page=@ViewBag.currentPage})</td>
                         </tr>
                     }
                 </tbody>
@@ -82,7 +82,7 @@
     </div>
     <div style="margin:0 auto" >
         <div>Have @ViewBag.countCart products in cart</div>
-        <a href="Cart/ViewCart">View cart</a>
+        <a href="/Product/Cart">View cart</a>
     </div>
 </body>
 </html>

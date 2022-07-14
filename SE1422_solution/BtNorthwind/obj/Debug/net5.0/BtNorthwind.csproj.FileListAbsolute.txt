@@ -76,3 +76,4 @@ C:\Users\ADMIN\source\repos\SE1422_solution\BtNorthwind\obj\Debug\net5.0\BtNorth
 C:\Users\ADMIN\source\repos\SE1422_solution\BtNorthwind\obj\Debug\net5.0\BtNorthwind.Views.pdb
 C:\Users\ADMIN\source\repos\SE1422_solution\BtNorthwind\obj\Debug\net5.0\Razor\VIews\Order\Detail.cshtml.g.cs
 C:\Users\ADMIN\source\repos\SE1422_solution\BtNorthwind\obj\Debug\net5.0\Razor\VIews\Product\List.cshtml.g.cs
+C:\Users\ADMIN\source\repos\SE1422_solution\BtNorthwind\obj\Debug\net5.0\Razor\VIews\Product\Cart.cshtml.g.cs
