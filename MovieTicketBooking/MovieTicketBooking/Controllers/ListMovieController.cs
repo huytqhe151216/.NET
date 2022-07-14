@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieTicketBooking.Logics;
+using MovieTicketBooking.Models;
+using System.Collections.Generic;
 
 namespace MovieTicketBooking.Controllers
 {
@@ -10,7 +13,9 @@ namespace MovieTicketBooking.Controllers
         }
         public IActionResult ComingSoon()
         {
-            return View();
+            List<Movie> listComingSoon = MovieLogic.GetComingSoonMovie();
+
+            return View(listComingSoon);
         }
     }
 }

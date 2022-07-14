@@ -151,7 +151,7 @@ namespace MovieTicketBooking.Models
             modelBuilder.Entity<GenreMovie>(entity =>
             {
                 entity.HasKey(e => new { e.GenreId, e.MovieId })
-                    .HasName("PK__GenreMov__B7382C1D33DD5418");
+                    .HasName("PK__GenreMov__B7382C1D3FF8BF1D");
 
                 entity.ToTable("GenreMovie");
 
@@ -199,6 +199,10 @@ namespace MovieTicketBooking.Models
 
                 entity.Property(e => e.Description).IsRequired();
 
+                entity.Property(e => e.Img)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.MovieName)
                     .IsRequired()
                     .HasMaxLength(255);
@@ -237,7 +241,7 @@ namespace MovieTicketBooking.Models
             modelBuilder.Entity<Rating>(entity =>
             {
                 entity.HasKey(e => e.RateId)
-                    .HasName("PK__Rating__58A7CCBC2F5DE65E");
+                    .HasName("PK__Rating__58A7CCBC7C9C780F");
 
                 entity.ToTable("Rating");
 
@@ -312,7 +316,7 @@ namespace MovieTicketBooking.Models
             modelBuilder.Entity<ShowtimeOrder>(entity =>
             {
                 entity.HasKey(e => e.OrderId)
-                    .HasName("PK__Showtime__C3905BAFAE3BC289");
+                    .HasName("PK__Showtime__C3905BAF34939D66");
 
                 entity.ToTable("ShowtimeOrder");
 
