@@ -2,6 +2,7 @@
 using MovieTicketBooking.Logics;
 using MovieTicketBooking.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MovieTicketBooking.Controllers
 {
@@ -14,7 +15,17 @@ namespace MovieTicketBooking.Controllers
         public IActionResult ComingSoon()
         {
             List<Movie> listComingSoon = MovieLogic.GetComingSoonMovie();
-
+            List<GenreMovie> genreMovies;
+            foreach (Movie movie in listComingSoon)
+            {
+                 genreMovies = MovieLogic.GetListGenreByMovieID(movie.MovieId);
+                 ViewData[movie.MovieId.ToString()] = genreMovies;
+            }
+            using(var context = new MovieTicketBookingContext())
+            {
+                ViewBag.ListGenres = context.Genres.ToList<Genre>();
+            }
+            
             return View(listComingSoon);
         }
     }

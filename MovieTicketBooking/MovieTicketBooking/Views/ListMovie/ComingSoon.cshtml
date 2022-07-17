@@ -7,69 +7,84 @@
 @model List<Movie>
 @using MovieTicketBooking.Models
 <div class="container product_section_container">
-		<div class="row">
-			<div class="col product_section clearfix">
+    <div class="row">
+        <div class="col product_section clearfix">
 
-				
 
-				<!-- Sidebar -->
 
-				<div class="sidebar">
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Product Category</h5>
-						</div>
-						<ul class="sidebar_categories">
-							<li><a href="#">Phim đang chiếu</a></li>
-							<li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Phim sắp chiếu</a></li>
-							<li><a href="#">Kho phim</a></li>
-							
-						</ul>
-					</div>
-				</div>
+            <!-- Sidebar -->
 
-				<!-- Main Content -->
+            <div class="sidebar">
+                <div class="sidebar_section">
+                    <div class="sidebar_title">
+                        <h5>Product Category</h5>
+                    </div>
+                    <ul class="sidebar_categories">
+                        <li><a href="#">Phim đang chiếu</a></li>
+                        <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Phim sắp chiếu</a></li>
+                        <li><a href="#">Kho phim</a></li>
 
-				<div class="main_content">
+                    </ul>
+                </div>
+            </div>
 
-					<!-- Products -->
+            <!-- Main Content -->
 
-					<div class="products_iso">
-						<div class="row">
-							<div class="col">
+            <div class="main_content">
 
-								<!-- Product Sorting -->
+                <!-- Products -->
 
-								
+                <div class="products_iso">
+                    <div class="row">
+                        <div class="col">
 
-								<!-- Product Grid -->
+                            <!-- Product Sorting -->
+                            <!-- Product Grid -->
 
-								<div class="row">
+                            <div class="row">
 
-									<!-- Product 1 -->
+                                <!-- Product 1 -->
+                                @foreach (Movie m in Model)
+                                {
+                                    <a href="/Movie/Detail/@m.MovieId">
+                                        <div style="height:450px" class="col-md-3 product-item men">
+                                        <div class="product discount product_filter">
+                                            <div style="height:275px" class="product_image">
+                                                <img style="height:100%" src="@m.Img" alt="">
+                                            </div>
 
-									@foreach (Movie m in Model)
-								   {
-									   <div class="col-md-3 product-item men">
-										<div class="product discount product_filter">
-											<div class="product_image">
-												<img src="@m.Img" alt="">
-											</div>
-											
-											
-											<div class="product_info">
-												<h6 class="product_name"><a href="#">@m.MovieName</a></h6>
-												<div class="product_price">@m.Price đồng</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">Đặt vé</a></div>
-									</div>
-								   }
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+                                            <div class="product_info">
+                                                <h6 class="product_name"><a href="/Movie/Detail/@m.MovieId">@m.MovieName</a></h6>
+                                                <div>
+                                                    Thể loại:
+                                                    @{
+
+                                                        for (var i = 0; i < m.GenreMovies.Count; i++)
+                                                        {
+                                                            for (var j = 0; j < ViewBag.ListGenres.Count; j++)
+                                                            {
+                                                                if (i == j)
+                                                                {
+                                                                    @(ViewBag.ListGenres[j].GenreName+", ")
+                                                                }
+                                                            }
+                                                        }
+
+                                                    }
+                                                </div>
+                                                <div>Khởi chiếu: @m.StartDate.ToString("dd/MM/yyyy")</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
