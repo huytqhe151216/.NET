@@ -16,7 +16,6 @@ namespace MovieTicketBooking.Models
         public int? RoomId { get; set; }
         public int? MovieId { get; set; }
         public DateTime? Date { get; set; }
-        public double? TimeFrom { get; set; }
         public int? Type { get; set; }
 
         public virtual Movie Movie { get; set; }

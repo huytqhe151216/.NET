@@ -1,4 +1,5 @@
-﻿drop database MovieTicketBooking
+﻿use master
+drop database MovieTicketBooking
 Create database MovieTicketBooking
 use MovieTicketBooking
 Create table Genre(
@@ -35,16 +36,19 @@ create table Account(
 	AccountID int primary key not null identity(1,1),
 	Email nvarchar(255),
 	Password varchar(255),
-	RoleID int references Role(RoleID),
+	RoleID int references Role(RoleID) default(1),
+	isActive bit default(0),
+	code int default(FLOOR(RAND()*(25000-1000+1))+1000)
 )
 
 
 Create table Customer(
 	CustomerID int references Account(AccountID) primary key,
 	CustomerName nvarchar(255),
-	BalanceInWallet int ,
+	Img varchar(255) default('https://znews-photo.zingcdn.me/w660/Uploaded/mdf_rkxrxd/2020_01_03/Ha_canh_noi_anh_9.jpg'),
+	BalanceInWallet int default(0) ,
 	Phone varchar(20),
-	TotalTrade int 
+	TotalTrade int default(0)
 )
 create table Rating(
 	RateID int primary key,
@@ -55,10 +59,10 @@ create table Rating(
 )
 Create table Room(
 	RoomID int primary key,
-	Description nvarchar 
+	Description nvarchar(255) 
 )
 Create table Employee(
-	EmployeeID int primary key not null identity(1,1),
+	EmployeeID int primary key not null  references Account(AccountID),
 	Name nvarchar(255) not null,
 	Phone varchar(20),
 )
@@ -76,15 +80,13 @@ Create table Showtime(
 	ShowtimeID int primary key identity(1,1) not null,
 	RoomID int references Room(RoomID),
 	MovieID int references Movie(MovieID), 
-	[Date] date ,
-	TimeFrom float,
-	Type int
+	[Date] datetime ,
+	[Type] int
 )
 Create table ShowtimeOrder(
 	OrderID int primary key identity(1,1) not null,
 	MovieID int references Movie(MovieID), 
-	[Date] date,
-	TimeFrom float,
+	[Date] datetime,
 	CustomerID int references Customer(CustomerID),
 	TypeOrder int not null,
 	IsApproved bit not null ,
@@ -164,3 +166,6 @@ values(N'ĐIỀU ƯỚC CUỐI CỦA TÙ NHÂN 2037',99,N'Hong Je Yi, Kim Ji You
 '07/29/2022',3,N'Ở tuổi 19, thay vì đến trường như bao bạn bè đồng trang lứa, Yoon-yeong phải nỗ lực hết mình để đi làm thêm kiếm tiền. Khao khát một cuộc sống tốt đẹp hơn cho mình và người mẹ khiếm thính, Yoon-yeong đặt mục tiêu thi đỗ kỳ thi công chức lên trên hết. Bất ngờ và trớ trêu thay, một sự cố khủng khiếp xảy ra, biến Yoon-yeong từ nạn nhân đáng thương trở thành kẻ giết người. Trong thời điểm tuyệt vọng và bất lực nhất, Yoon-yeong đã gặp những người chị em trong phòng giam số 12. Đằng sau mỗi người là một câu chuyện khác nhau, nhưng họ đã trao nhau tình yêu thương và niềm hy vọng để cùng hướng về một tương lai tươi sáng ngoài song sắt nhà tù.',
 '1AXeEfyTLKs',1,'https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/190x260/2e2b8cd282892c71872b9e67d2cb5039/m/g/mg_main-poster_layered_1_.jpg',75000)
 Insert into GenreMovie(MovieID, GenreID) values(8,8)
+select * from Account
+select * from Customer
+

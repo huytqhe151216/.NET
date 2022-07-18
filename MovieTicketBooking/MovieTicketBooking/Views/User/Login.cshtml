@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Đăng nhập";
+}
+<div id="login-row" class="row justify-content-center align-items-center">
+    <div id="login-column" class="col-md-6">
+        <div id="login-box" class="col-md-12">
+            <form style="background-color: #EAEAEA;padding:25px" id="login-form" class="form" action="/User/Login" method="post">
+                <h3 class="text-center text-info">Đăng nhập</h3>
+                <div class="form-group">
+                    <label for="username" class="text-info">Email:</label><br>
+                    <input type="email" name="email" id="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-info">Mật khẩu:</label><br>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="submit" name="submit" class="btn btn-info btn-md" value="Đăng nhập">
+                    </div>
+                    <div class="col-md-6">
+                        <a style="margin:0 auto" href="/User/Register" >Chưa có tài khoản? Đăng ký</a>
+                    </div>
+
+
+                </div>
+                <h5 style="margin:10px">@ViewBag.Message</h5>
+            </form>
+        </div>
+    </div>
+</div>

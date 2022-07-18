@@ -17,6 +17,7 @@ namespace MovieTicketBooking.Models
 
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
+        public string Img { get; set; }
         public int? BalanceInWallet { get; set; }
         public string Phone { get; set; }
         public int? TotalTrade { get; set; }

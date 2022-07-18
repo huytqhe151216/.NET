@@ -17,6 +17,7 @@ namespace MovieTicketBooking.Models
         public string Name { get; set; }
         public string Phone { get; set; }
 
+        public virtual Account EmployeeNavigation { get; set; }
         public virtual ICollection<Print> Prints { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
     }

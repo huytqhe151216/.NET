@@ -10,7 +10,6 @@ namespace MovieTicketBooking.Models
         public int OrderId { get; set; }
         public int? MovieId { get; set; }
         public DateTime? Date { get; set; }
-        public double? TimeFrom { get; set; }
         public int? CustomerId { get; set; }
         public int TypeOrder { get; set; }
         public bool IsApproved { get; set; }

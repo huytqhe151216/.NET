@@ -83,3 +83,7 @@ C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5
 C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5.0\Razor\Views\ListMovie\NowShowing.cshtml.g.cs
 C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5.0\Razor\Views\ListMovie\ComingSoon.cshtml.g.cs
 C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5.0\Razor\Views\Movie\Detail.cshtml.g.cs
+C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
+C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
+C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5.0\Razor\Views\User\Verify.cshtml.g.cs
+C:\Users\ADMIN\source\repos\MovieTicketBooking\MovieTicketBooking\obj\Debug\net5.0\Razor\Views\User\ChangePassword.cshtml.g.cs
