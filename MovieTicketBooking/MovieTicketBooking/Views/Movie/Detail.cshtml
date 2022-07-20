@@ -2,32 +2,60 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewBag.Title = Model.MovieName;
 }
 @model Movie
+@using Microsoft.AspNetCore.Http
+@using MovieTicketBooking.Logics
 @using MovieTicketBooking.Models
+@using Newtonsoft.Json
 <div margine="max-width:80%; margin:0 auto">
     <h3>Nội dung phim</h3>
     <div class="row">
         <div class="col-md-3" style="height:350px">
             <img style="height:100%;width:100%; object-fit: contain" src="@Model.Img" alt="">
         </div>
-        <div class="col-md-9">
-            <h3>@Model.MovieName</h3>
+        <div class=" col-md-9">
+            <div class="row">
+                <h3 class="col-md-10">@Model.MovieName</h3>
+                <input type="hidden" value="@Model.MovieId" id="mid" />
+                @{
+                    var setting = new JsonSerializerSettings();
+                    setting.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    string json = Context.Session.GetString("Account");
+                    Account account = null;
+                    if (json != null)
+                    {
+                        account = JsonConvert.DeserializeObject<Account>(json, setting);
+                    }
+                    bool checkLove = false;
+                    if (account != null)
+                    {
+                        checkLove = MovieLogic.CheckLoveMovieByCustomer(account.AccountId, Model.MovieId);
+                    }
+                }
+                <svg class="col-md-2" id="heart" onclick="AddFavourite()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color:@(checkLove == true?"red":"black")">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg>
+            </div>
+
             <div><span style="font-weight:600">Diễn viên:</span> @Model.Actor</div>
-            <div><span style="font-weight:600">Thể loại: </span>@{
+            <div>
+                <span style="font-weight:600">Thể loại: </span>@{
 
-                                                        for (var i = 0; i < @Model.GenreMovies.Count; i++)
-                                                        {
-                                                            for (var j = 0; j < ViewBag.ListGenres.Count; j++)
-                                                            {
-                                                                if (i == j)
-                                                                {
-                                                                    @(ViewBag.ListGenres[j].GenreName+", ")
-                                                                }
-                                                            }
-                                                        }
+                    for (var i = 0; i < @Model.GenreMovies.Count; i++)
+                    {
+                        for (var j = 0; j < ViewBag.ListGenres.Count; j++)
+                        {
+                            if (i == j)
+                            {
+                                @(ViewBag.ListGenres[j].GenreName+", ")
+                            }
+                        }
+                    }
 
-                                                    }</div>
+                }
+            </div>
             <div><span style="font-weight:600">Khởi chiếu:</span> @Model.StartDate.ToString("dd/MM/yyyy")</div>
             <div><span style="font-weight:600">Thời lượng:</span> @Model.Duration phút</div>
             <div><span style="font-weight:600">Giới hạn tuổi:</span> @ViewBag.AgeLimit.Description</div>
@@ -36,3 +64,21 @@
     </div>
     <iframe style="margin:30px 30px" width="560" height="315" src="https://www.youtube.com/embed/@Model.Trailer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+<script>
+    function AddFavourite(){
+    var mid = $('#mid').val();
+    $.ajax({
+              url: "/Customer/AddFavourite/"+mid,
+              type: "post",
+              data: {
+
+              },
+              success: function() {
+                      window.location.reload()
+          },
+          error: function(){
+              window.location.href = "/User/Login";
+          }
+      });
+    }
+</script>

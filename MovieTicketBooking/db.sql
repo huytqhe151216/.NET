@@ -168,4 +168,9 @@ values(N'ĐIỀU ƯỚC CUỐI CỦA TÙ NHÂN 2037',99,N'Hong Je Yi, Kim Ji You
 Insert into GenreMovie(MovieID, GenreID) values(8,8)
 select * from Account
 select * from Customer
+select * from FavouriteList
+Insert into FavouriteList values(1,2)
+
+select m.* from Movie m, FavouriteList f
+where m.MovieId=F.MovieId and f.CustomerId = 1
 

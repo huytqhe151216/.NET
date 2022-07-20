@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "Phim sắp chiếu";
+    ViewBag.Title = "Danh sách yêu thích";
 }
 @model List<Movie>
 @using MovieTicketBooking.Models
@@ -14,26 +14,14 @@
 
             <!-- Sidebar -->
 
-            <div class="sidebar">
-                <div class="sidebar_section">
-                    <div class="sidebar_title">
-                        <h5>Product Category</h5>
-                    </div>
-                    <ul class="sidebar_categories">
-                        <li><a href="#">Phim đang chiếu</a></li>
-                        <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Phim sắp chiếu</a></li>
-                        <li><a href="#">Kho phim</a></li>
-
-                    </ul>
-                </div>
-            </div>
+           
 
             <!-- Main Content -->
 
             <div class="main_content">
 
                 <!-- Products -->
-
+                <h3>Danh sách yêu thích của bạn</h3>
                 <div class="products_iso">
                     <div class="row">
                         <div class="col">
@@ -90,3 +78,4 @@
         </div>
     </div>
 </div>
+
