@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Thêm phim mới";
+}
+<div id="login-row" class="row justify-content-center align-items-center">
+    <div id="login-column" class="col-md-8">
+        <div id="login-box" class="col-md-12">
+            <form style="background-color: #EAEAEA;padding:25px" id="login-form" class="form" action="/Admin/AddNewMovie" enctype="multipart/form-data" method="post">
+                <h3 class="text-center text-info">Thêm phim</h3>
+                <div class="form-group">
+                    <label class="text-info">Tên:</label><br>
+                    <input type="text" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Diễn viên</label><br>
+                    <input type="text" name="actor" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Thể loại:</label>
+                    <select style="width:630px" class="js-example-basic-multiple" name="genre[]" multiple="multiple">
+                        @foreach (Genre genre in ViewBag.ListGenres)
+                        {
+                            <option value="@genre.GenreId">@genre.GenreName</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Thời lượng(Phút):</label><br>
+                    <input type="text" name="duration" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Ngày công chiếu:</label><br>
+                    <input type="date" name="startDate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Mô tả:</label><br>
+                    <textarea style="width:100%" name="description" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Mã nhúng trailer:</label>
+                    <input type="text" name="trailer" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Giới hạn tuổi:</label>
+                    <select name="ageLimit">
+                        @foreach (AgeLimit age in ViewBag.AgeLimits)
+                        {
+                            <option value=@age.AgeLimitId>@age.Description</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Giá: </label>
+                    <input type="text" name="price" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Ảnh:        </label>
+                    <input type="file" name="image">
+                </div>
+                <input type="submit" name="submit" class="btn btn-info btn-md" value="Thêm">
+                <h5 style="margin:10px">@ViewBag.Message</h5>
+            </form>
+        </div>
+    </div>
+</div>

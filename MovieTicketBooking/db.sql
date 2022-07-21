@@ -40,12 +40,12 @@ create table Account(
 	isActive bit default(0),
 	code int default(FLOOR(RAND()*(25000-1000+1))+1000)
 )
-
+Insert into Account(Email,Password,RoleID,isActive) values('huyheotmhp2001@gmail.com','1',3,1)
 
 Create table Customer(
 	CustomerID int references Account(AccountID) primary key,
 	CustomerName nvarchar(255),
-	Img varchar(255) default('https://znews-photo.zingcdn.me/w660/Uploaded/mdf_rkxrxd/2020_01_03/Ha_canh_noi_anh_9.jpg'),
+	Img varchar(255) default('21eb892b-4b18-46e7-b6ab-ea0e2a46b194.jpg'),
 	BalanceInWallet int default(0) ,
 	Phone varchar(20),
 	TotalTrade int default(0)
@@ -166,11 +166,23 @@ values(N'ĐIỀU ƯỚC CUỐI CỦA TÙ NHÂN 2037',99,N'Hong Je Yi, Kim Ji You
 '07/29/2022',3,N'Ở tuổi 19, thay vì đến trường như bao bạn bè đồng trang lứa, Yoon-yeong phải nỗ lực hết mình để đi làm thêm kiếm tiền. Khao khát một cuộc sống tốt đẹp hơn cho mình và người mẹ khiếm thính, Yoon-yeong đặt mục tiêu thi đỗ kỳ thi công chức lên trên hết. Bất ngờ và trớ trêu thay, một sự cố khủng khiếp xảy ra, biến Yoon-yeong từ nạn nhân đáng thương trở thành kẻ giết người. Trong thời điểm tuyệt vọng và bất lực nhất, Yoon-yeong đã gặp những người chị em trong phòng giam số 12. Đằng sau mỗi người là một câu chuyện khác nhau, nhưng họ đã trao nhau tình yêu thương và niềm hy vọng để cùng hướng về một tương lai tươi sáng ngoài song sắt nhà tù.',
 '1AXeEfyTLKs',1,'https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/190x260/2e2b8cd282892c71872b9e67d2cb5039/m/g/mg_main-poster_layered_1_.jpg',75000)
 Insert into GenreMovie(MovieID, GenreID) values(8,8)
+Insert into Account(Email,Password,RoleID,code) values ('cus1@gmail.com',1,1,1111),
+('cus2@gmail.com',1,1,1111),('cus3@gmail.com',1,1,1111),('cus4@gmail.com',1,1,1111),
+('cus5@gmail.com',1,1,1111),
+('cus6@gmail.com',1,1,1111),
+('cus7@gmail.com',1,1,1111),
+('cus8@gmail.com',1,1,1111),('cus9@gmail.com',1,1,1111),('cus10@gmail.com',1,1,1111)
 select * from Account
+
 select * from Customer
+Insert into Customer(CustomerID,CustomerName,Phone) values(6,'name1','123'),(7,'name2','12'),
+(9,'name4','1212323232'),(10,'name4','121232432'),(11,'name5','1212328786'),(12,'name6','121232'),(13,'name7','12120932'),
+(14,'name8','121232'),(15,'name9','121232453'),(16,'name10','121232765')
+select * from Employee
 select * from FavouriteList
 Insert into FavouriteList values(1,2)
 
 select m.* from Movie m, FavouriteList f
 where m.MovieId=F.MovieId and f.CustomerId = 1
+select * from Customer
 

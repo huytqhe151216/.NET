@@ -13,7 +13,7 @@ namespace MovieTicketBooking.Logics
             {
                 return context.Movies
                     .Include(x => x.GenreMovies)
-                    .Where(x => x.StartDate >= System.DateTime.Today).ToList();
+                    .Where(x => x.StartDate >= System.DateTime.Today && x.Status==true).ToList();
             }
         }
         public static List<GenreMovie> GetListGenreByMovieID(int MovieID)

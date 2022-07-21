@@ -1,0 +1,91 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Quản lý khách hàng";
+}
+@model List<Customer>;
+@using MovieTicketBooking.Models;
+@using MovieTicketBooking.Logics;
+<table border=1 style="width:100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Tên</th>
+            <th>Số điện thoại</th>
+            <th>Số dư trong ví</th>
+            <th>Trạng thái</th>
+            <th>Quản lý</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Customer c in Model)
+        {
+            <tr>
+                <td>@c.CustomerId</td>
+                <td>@AccountLogic.GetAccountById(c.CustomerId).Email</td>
+                <td>@c.CustomerName</td>
+                <td>@c.Phone</td>
+                <td>@c.BalanceInWallet</td>
+                <td>@(((bool)AccountLogic.GetAccountById(c.CustomerId).IsActive)?"Active":"Inactive")</td>
+                <td>
+                    <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter-@c.CustomerId">
+                        Nạp tiền
+                    </button>
+
+                    <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter-@c.CustomerId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle1">Nạp tiền cho @c.CustomerName</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/Admin/AddMoney?cid=@c.CustomerId" method="post">
+                                        <label>Nhập số tiền:</label>
+                                        <input type="number" name="money" required>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+
+                                            <input type="submit" class="btn btn-primary" value="Nạp tiền">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary" href="/Admin/Active?accountId=@c.CustomerId">@(((bool)AccountLogic.GetAccountById(c.CustomerId).IsActive)?"Inactive":"Active")</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div style="width:100%; padding:30px">
+    <nav aria-label="Page navigation example" style="margin:0 auto">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="/Admin/ManageCustomer/page=@(ViewBag.currentPage-1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            @for (var i = 1; i <= ViewBag.numberPage; i++)
+            {
+                <li class="page-item"><a class="page-link" href="/Admin/ManageCustomer?page=@i">@i</a></li>
+            }
+
+            <li class="page-item">
+                <a class="page-link" href="/Admin/ManageCustomer/page=@(ViewBag.currentPage+1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -9,11 +9,16 @@
 @using MovieTicketBooking.Logics
 @using MovieTicketBooking.Models
 @using Newtonsoft.Json
+<style>
+    .fillcolor {
+        color: red;
+    }
+</style>
 <div margine="max-width:80%; margin:0 auto">
     <h3>Nội dung phim</h3>
     <div class="row">
         <div class="col-md-3" style="height:350px">
-            <img style="height:100%;width:100%; object-fit: contain" src="@Model.Img" alt="">
+            <img style="height:350px;width:247px; object-fit: contain" src="~/movie/images/@Model.Img" alt="">
         </div>
         <div class=" col-md-9">
             <div class="row">
@@ -34,7 +39,18 @@
                         checkLove = MovieLogic.CheckLoveMovieByCustomer(account.AccountId, Model.MovieId);
                     }
                 }
-                <svg class="col-md-2" id="heart" onclick="AddFavourite()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color:@(checkLove == true?"red":"black")">
+                <svg class="col-md-2   
+                @{
+                    if(checkLove) @Html.Raw("fillcolor");
+                }
+
+" id="heart" 
+                onclick="AddFavourite()" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="30" 
+                height="30" 
+                fill="currentColor" 
+                class="bi bi-heart-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                 </svg>
             </div>
@@ -74,11 +90,12 @@
 
               },
               success: function() {
-                      window.location.reload()
+                   $("#heart").toggleClass("fillcolor");
           },
           error: function(){
               window.location.href = "/User/Login";
           }
       });
     }
+
 </script>

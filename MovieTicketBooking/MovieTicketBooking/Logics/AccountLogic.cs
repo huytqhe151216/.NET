@@ -6,21 +6,29 @@ namespace MovieTicketBooking.Logics
 {
     public class AccountLogic
     {
-        public readonly MovieTicketBookingContext context = new();
-        public  bool ChangePassword(string email, string newPassword)
+        public static Account GetAccountById(int id)
         {
-            try
+            using (var context = new MovieTicketBookingContext())
             {
-                Account account = context.Accounts.SingleOrDefault(x => x.Email.Equals(email));
-                account.Password = newPassword;
-                context.Accounts.Update(account);
-                context.SaveChanges();
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
+                return context.Accounts.FirstOrDefault(x=>x.AccountId==id);
             }
         }
+        public static bool CheckEmailExist(string email)
+        {
+            using (var context = new MovieTicketBookingContext())
+            {
+                Account account = context.Accounts.FirstOrDefault(x => x.Email == email);
+                if (account == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+           
+        }
+        
     }
 }
